@@ -14,15 +14,66 @@ class InputPageState extends State<InputPage> {
       appBar: AppBar(
         title: const Text('BMI CALCULATOR'),
       ),
-      body: const Center(
-        child: Text('Body Text'),
-      ),
-      // floatingActionButton: const FloatingActionButton(
-      //   child: Icon(Icons.add),
-      // ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
+      body: Column(
+        children: [
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: Color(0xFF1D1E33),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: Color(0xFF1D1E33),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.all(8.0),
+              decoration: BoxDecoration(
+                color: Color(0xFF1D1E33),
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: Color(0xFF1D1E33),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: Color(0xFF1D1E33),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
