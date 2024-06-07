@@ -20,55 +20,25 @@ class InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                  ),
+                  child: Card(color: Color(0xFF1D1E33)),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                  ),
+                  child: Card(color: Color(0xFF1D1E33)),
                 )
               ],
             ),
           ),
           Expanded(
-            child: Container(
-              margin: EdgeInsets.all(8.0),
-              decoration: BoxDecoration(
-                color: Color(0xFF1D1E33),
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-            ),
+            child: Card(color: Color(0xFF1D1E33)),
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                  ),
+                  child: Card(color: Color(0xFF1D1E33)),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                  ),
+                  child: Card(color: Color(0xFF1D1E33)),
                 )
               ],
             ),
@@ -78,3 +48,22 @@ class InputPageState extends State<InputPage> {
     );
   }
 }
+
+class Card extends StatelessWidget {
+  final Color color;
+
+  Card({required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+    );
+  }
+}
+
+// color: Color(0xFF1D1E33)
