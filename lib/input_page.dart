@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const Color cardColor = Color(0xFF1D1E33);
 
@@ -22,25 +23,56 @@ class InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: Card(color: cardColor),
+                  child: Card(
+                    color: cardColor,
+                    cardChild: Column(
+                      children: [
+                        Icon(FontAwesomeIcons.mars),
+                      ],
+                    ),
+                  ),
                 ),
                 Expanded(
-                  child: Card(color: Color(0xFF1D1E33)),
+                  child: Card(
+                    color: cardColor,
+                    cardChild: Column(),
+                  ),
                 )
               ],
             ),
           ),
           Expanded(
-            child: Card(color: Color(0xFF1D1E33)),
+            child: Card(
+              color: cardColor,
+              cardChild: Column(
+                children: [
+                  Icon(FontAwesomeIcons.mars, size: 80.0),
+                ],
+              ),
+            ),
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: Card(color: Color(0xFF1D1E33)),
+                  child: Card(
+                    color: cardColor,
+                    cardChild: Column(
+                      children: [
+                        Icon(FontAwesomeIcons.mars),
+                      ],
+                    ),
+                  ),
                 ),
                 Expanded(
-                  child: Card(color: Color(0xFF1D1E33)),
+                  child: Card(
+                    color: cardColor,
+                    cardChild: Column(
+                      children: [
+                        Icon(FontAwesomeIcons.mars),
+                      ],
+                    ),
+                  ),
                 )
               ],
             ),
@@ -59,8 +91,9 @@ class InputPageState extends State<InputPage> {
 
 class Card extends StatelessWidget {
   final Color color;
+  final Widget cardChild;
 
-  Card({required this.color});
+  Card({required this.color, required this.cardChild});
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +103,7 @@ class Card extends StatelessWidget {
         color: color,
         borderRadius: BorderRadius.circular(12.0),
       ),
+      child: cardChild,
     );
   }
 }
