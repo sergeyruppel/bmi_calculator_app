@@ -25,17 +25,21 @@ class InputPageState extends State<InputPage> {
                 Expanded(
                   child: Card(
                     color: cardColor,
-                    cardChild: Column(
-                      children: [
-                        Icon(FontAwesomeIcons.mars),
-                      ],
+                    cardChild: const IconContent(
+                      icon: FontAwesomeIcons.mars,
+                      text: 'MALE',
+                      color: Color(0xFF8D8E98),
                     ),
                   ),
                 ),
                 Expanded(
                   child: Card(
                     color: cardColor,
-                    cardChild: Column(),
+                    cardChild: const IconContent(
+                      icon: FontAwesomeIcons.venus,
+                      text: 'FEMALE',
+                      color: Color(0xFF8D8E98),
+                    ),
                   ),
                 )
               ],
@@ -45,9 +49,7 @@ class InputPageState extends State<InputPage> {
             child: Card(
               color: cardColor,
               cardChild: Column(
-                children: [
-                  Icon(FontAwesomeIcons.mars, size: 80.0),
-                ],
+                children: [],
               ),
             ),
           ),
@@ -58,9 +60,7 @@ class InputPageState extends State<InputPage> {
                   child: Card(
                     color: cardColor,
                     cardChild: Column(
-                      children: [
-                        Icon(FontAwesomeIcons.mars),
-                      ],
+                      children: [],
                     ),
                   ),
                 ),
@@ -68,9 +68,7 @@ class InputPageState extends State<InputPage> {
                   child: Card(
                     color: cardColor,
                     cardChild: Column(
-                      children: [
-                        Icon(FontAwesomeIcons.mars),
-                      ],
+                      children: [],
                     ),
                   ),
                 )
@@ -85,6 +83,31 @@ class InputPageState extends State<InputPage> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class IconContent extends StatelessWidget {
+  final IconData icon;
+  final String text;
+  final Color color;
+
+  const IconContent({
+    super.key,
+    required this.icon,
+    required this.text,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, size: 80.0),
+        const SizedBox(height: 16.0),
+        Text(text, style: TextStyle(fontSize: 18.0, color: color)),
+      ],
     );
   }
 }
