@@ -19,13 +19,13 @@ class InputPageState extends State<InputPage> {
       ),
       body: Column(
         children: [
-          Expanded(
+          const Expanded(
             child: Row(
               children: [
                 Expanded(
                   child: Card(
                     color: cardColor,
-                    cardChild: const IconContent(
+                    cardChild: IconContent(
                       icon: FontAwesomeIcons.mars,
                       text: 'MALE',
                       color: Color(0xFF8D8E98),
@@ -35,7 +35,7 @@ class InputPageState extends State<InputPage> {
                 Expanded(
                   child: Card(
                     color: cardColor,
-                    cardChild: const IconContent(
+                    cardChild: IconContent(
                       icon: FontAwesomeIcons.venus,
                       text: 'FEMALE',
                       color: Color(0xFF8D8E98),
@@ -45,7 +45,7 @@ class InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Card(
               color: cardColor,
               cardChild: Column(
@@ -53,7 +53,7 @@ class InputPageState extends State<InputPage> {
               ),
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Row(
               children: [
                 Expanded(
@@ -76,8 +76,8 @@ class InputPageState extends State<InputPage> {
             ),
           ),
           Container(
-            color: Color(0xFFEB1555),
-            margin: EdgeInsets.only(top: 20.0),
+            color: const Color(0xFFEB1555),
+            margin: const EdgeInsets.only(top: 20.0),
             width: double.infinity,
             height: 80.0,
           ),
@@ -116,12 +116,12 @@ class Card extends StatelessWidget {
   final Color color;
   final Widget cardChild;
 
-  Card({required this.color, required this.cardChild});
+  const Card({super.key, required this.color, required this.cardChild});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(12.0),
