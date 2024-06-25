@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bmi_calculator_app/icon_content.dart';
+import 'package:bmi_calculator_app/reusable_card.dart';
 
-const Color cardColor = Color(0xFF1D1E33);
+const Color activeCardColor = Color(0xFF1D1E33);
+const Color inactiveCardColor = Color(0xFF111328);
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -11,6 +14,10 @@ class InputPage extends StatefulWidget {
 }
 
 class InputPageState extends State<InputPage> {
+  void updateColor(int gender) {
+    if (gender == 1) {}
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,26 +26,29 @@ class InputPageState extends State<InputPage> {
       ),
       body: Column(
         children: [
-          const Expanded(
+          Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: Card(
-                    color: cardColor,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.mars,
-                      text: 'MALE',
-                      color: Color(0xFF8D8E98),
+                  child: GestureDetector(
+                    onTap: () {
+                      print('tap');
+                    },
+                    child: ReusableCard(
+                      color: inactiveCardColor,
+                      cardChild: IconContent(
+                        icon: FontAwesomeIcons.mars,
+                        text: 'MALE',
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
-                  child: Card(
-                    color: cardColor,
+                  child: ReusableCard(
+                    color: inactiveCardColor,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.venus,
                       text: 'FEMALE',
-                      color: Color(0xFF8D8E98),
                     ),
                   ),
                 )
@@ -46,8 +56,8 @@ class InputPageState extends State<InputPage> {
             ),
           ),
           const Expanded(
-            child: Card(
-              color: cardColor,
+            child: ReusableCard(
+              color: activeCardColor,
               cardChild: Column(
                 children: [],
               ),
@@ -57,16 +67,16 @@ class InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: Card(
-                    color: cardColor,
+                  child: ReusableCard(
+                    color: activeCardColor,
                     cardChild: Column(
                       children: [],
                     ),
                   ),
                 ),
                 Expanded(
-                  child: Card(
-                    color: cardColor,
+                  child: ReusableCard(
+                    color: activeCardColor,
                     cardChild: Column(
                       children: [],
                     ),
@@ -86,49 +96,3 @@ class InputPageState extends State<InputPage> {
     );
   }
 }
-
-class IconContent extends StatelessWidget {
-  final IconData icon;
-  final String text;
-  final Color color;
-
-  const IconContent({
-    super.key,
-    required this.icon,
-    required this.text,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, size: 80.0),
-        const SizedBox(height: 16.0),
-        Text(text, style: TextStyle(fontSize: 18.0, color: color)),
-      ],
-    );
-  }
-}
-
-class Card extends StatelessWidget {
-  final Color color;
-  final Widget cardChild;
-
-  const Card({super.key, required this.color, required this.cardChild});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(8.0),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(12.0),
-      ),
-      child: cardChild,
-    );
-  }
-}
-
-// color: Color(0xFF1D1E33)
