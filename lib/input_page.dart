@@ -16,16 +16,15 @@ class InputPage extends StatefulWidget {
 class InputPageState extends State<InputPage> {
   Color maleCardColor = inactiveCardColor;
   Color femaleCardColor = inactiveCardColor;
+
   void updateColor(int gender) {
     if (gender == 1) {
       maleCardColor = activeCardColor;
-    } else {
       femaleCardColor = inactiveCardColor;
     }
     if (gender == 2) {
       femaleCardColor = activeCardColor;
-    } else {
-      maleCardColor = activeCardColor;
+      maleCardColor = inactiveCardColor;
     }
   }
 
@@ -83,7 +82,7 @@ class InputPageState extends State<InputPage> {
               ),
             ),
           ),
-          const Expanded(
+          Expanded(
             child: Row(
               children: [
                 Expanded(
