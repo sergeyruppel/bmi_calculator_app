@@ -6,6 +6,8 @@ import 'package:bmi_calculator_app/reusable_card.dart';
 const Color activeCardColor = Color(0xFF1D1E33);
 const Color inactiveCardColor = Color(0xFF111328);
 
+enum Gender { male, female }
+
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
 
@@ -17,12 +19,12 @@ class InputPageState extends State<InputPage> {
   Color maleCardColor = inactiveCardColor;
   Color femaleCardColor = inactiveCardColor;
 
-  void updateColor(String gender) {
-    if (gender == 'male') {
+  void updateColor(Gender gender) {
+    if (gender == Gender.male) {
       maleCardColor = activeCardColor;
       femaleCardColor = inactiveCardColor;
     }
-    if (gender == 'female') {
+    if (gender == Gender.female) {
       femaleCardColor = activeCardColor;
       maleCardColor = inactiveCardColor;
     }
@@ -43,7 +45,7 @@ class InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColor('male');
+                        updateColor(Gender.male);
                         print('tap');
                       });
                     },
@@ -60,7 +62,7 @@ class InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColor('female');
+                        updateColor(Gender.female);
                         print('female');
                       });
                     },
